@@ -1,0 +1,51 @@
+.cursor-dot {
+  width: 8px;
+  height: 8px;
+  background: var(--accent);
+  border-radius: 50%;
+  position: fixed;
+  pointer-events: none;
+  z-index: 99999;
+  transform: translate(-50%, -50%);
+  transition: width 0.2s, height 0.2s, background 0.2s;
+  box-shadow: 0 0 10px var(--accent), 0 0 20px var(--accent);
+}
+
+.cursor-ring {
+  width: 40px;
+  height: 40px;
+  border: 2px solid rgba(139, 92, 246, 0.4);
+  border-radius: 50%;
+  position: fixed;
+  pointer-events: none;
+  z-index: 99998;
+  transform: translate(-50%, -50%);
+  transition: width 0.3s, height 0.3s, border-color 0.3s, background 0.3s;
+  box-shadow: 0 0 15px rgba(139, 92, 246, 0.1);
+}
+
+.cursor-dot.clicked {
+  width: 12px;
+  height: 12px;
+  background: var(--accent-2);
+  box-shadow: 0 0 15px var(--accent-2), 0 0 30px var(--accent-2);
+}
+
+.cursor-ring.clicked {
+  width: 30px;
+  height: 30px;
+  border-color: var(--accent-2);
+  background: rgba(34, 211, 238, 0.1);
+}
+
+.cursor-dot.hidden,
+.cursor-ring.hidden {
+  opacity: 0;
+}
+
+@media (max-width: 768px) {
+  .cursor-dot,
+  .cursor-ring {
+    display: none;
+  }
+}

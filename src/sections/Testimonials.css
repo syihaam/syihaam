@@ -1,0 +1,119 @@
+.testimonials-slider {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.testimonial-viewport {
+  flex: 1;
+  overflow: hidden;
+}
+
+.testimonial-card {
+  padding: 3rem 2.5rem;
+  border-radius: var(--radius-lg);
+  text-align: center;
+}
+
+.testimonial-avatar {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin: 0 auto 1rem;
+  border: 2px solid var(--accent);
+  box-shadow: 0 0 20px rgba(139, 92, 246, 0.3);
+}
+
+.testimonial-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.testimonial-stars {
+  margin-bottom: 1rem;
+}
+
+.star {
+  color: #FBBF24;
+  font-size: 1.1rem;
+  margin: 0 2px;
+}
+
+.testimonial-text {
+  font-size: 1rem;
+  color: var(--text-secondary);
+  line-height: 1.8;
+  font-style: italic;
+  margin-bottom: 1.5rem;
+}
+
+.testimonial-name {
+  font-size: 1.1rem;
+  color: var(--text-primary);
+  margin-bottom: 0.2rem;
+}
+
+.testimonial-role {
+  font-size: 0.85rem;
+  color: var(--accent);
+}
+
+.testimonial-arrow {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  color: var(--text-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 1.3rem;
+  transition: var(--transition);
+  flex-shrink: 0;
+}
+
+.testimonial-arrow:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+  box-shadow: var(--neon-glow);
+}
+
+.testimonial-dots {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-top: 2rem;
+  position: absolute;
+  bottom: -3rem;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.testimonial-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  border: 1px solid var(--accent);
+  background: transparent;
+  cursor: pointer;
+  transition: var(--transition);
+  padding: 0;
+}
+
+.testimonial-dot.active {
+  background: var(--accent);
+  box-shadow: 0 0 10px var(--accent);
+}
+
+@media (max-width: 768px) {
+  .testimonials-slider {
+    flex-direction: column;
+  }
+}
