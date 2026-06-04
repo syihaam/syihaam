@@ -1,9 +1,32 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import "./LoadingScreen.css";
+
+const welcomeMessages = [
+  { threshold: 0, text: "Welcome" },
+  { threshold: 10, text: "Selamat Datang" },
+  { threshold: 20, text: "مرحباً" },
+  { threshold: 30, text: "Bienvenue" },
+  { threshold: 40, text: "Willkommen" },
+  { threshold: 50, text: "ようこそ" },
+  { threshold: 60, text: "欢迎" },
+  { threshold: 70, text: "환영합니다" },
+  { threshold: 80, text: "Benvenuto" },
+  { threshold: 90, text: "Bem-vindo" },
+  { threshold: 100, text: "Welcome To My Portfolio" },
+];
+
+function getMessageForProgress(progress) {
+  return welcomeMessages.reduce((prev, curr) =>
+    progress >= curr.threshold ? curr : prev
+  ).text;
+}
 
 export default function LoadingScreen({ onFinish }) {
   const [progress, setProgress] = useState(0);
   const [fadeOut, setFadeOut] = useState(false);
+  const [displayedMessage, setDisplayedMessage] = useState("Welcome");
+  const [visible, setVisible] = useState(true);
+  const targetMessage = useRef("Welcome");
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -12,7 +35,7 @@ export default function LoadingScreen({ onFinish }) {
           clearInterval(interval);
           return 100;
         }
-        const increment = Math.random() * 15 + 5;
+        const increment = 1.5 + Math.random() * 2;
         return Math.min(prev + increment, 100);
       });
     }, 200);
@@ -21,13 +44,33 @@ export default function LoadingScreen({ onFinish }) {
   }, []);
 
   useEffect(() => {
+    const newMessage = getMessageForProgress(progress);
+    if (newMessage !== targetMessage.current) {
+      targetMessage.current = newMessage;
+      setVisible(false);
+    }
+  }, [progress]);
+
+  useEffect(() => {
+    if (!visible) {
+      const t = setTimeout(() => {
+        setDisplayedMessage(targetMessage.current);
+        const t2 = setTimeout(() => setVisible(true), 50);
+        return () => clearTimeout(t2);
+      }, 250);
+      return () => clearTimeout(t);
+    }
+  }, [visible]);
+
+  useEffect(() => {
     if (progress === 100) {
-      setTimeout(() => {
+      const t = setTimeout(() => {
         setFadeOut(true);
         setTimeout(() => {
           if (onFinish) onFinish();
         }, 800);
-      }, 400);
+      }, 1200);
+      return () => clearTimeout(t);
     }
   }, [progress, onFinish]);
 
@@ -44,7 +87,9 @@ export default function LoadingScreen({ onFinish }) {
           </div>
           <span className="loading-percent">{Math.floor(progress)}%</span>
         </div>
-        <p className="loading-text">Loading Portfolio</p>
+        <p className={`loading-message ${visible ? "visible" : "hidden"}`}>
+          {displayedMessage}
+        </p>
       </div>
       <div className="loading-particles">
         {[...Array(6)].map((_, i) => (
