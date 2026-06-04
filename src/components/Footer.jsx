@@ -1,6 +1,7 @@
+import { Link } from "react-router-dom";
 import { FiGithub, FiInstagram, FiLinkedin } from "react-icons/fi";
 import { SiTiktok } from "react-icons/si";
-import "./Footer.css";
+import "../styles/footer.css";
 
 export default function Footer() {
   const year = new Date().getFullYear();
@@ -10,9 +11,9 @@ export default function Footer() {
       <div className="footer-glow" />
       <div className="container footer-container">
         <div className="footer-brand">
-          <a href="#home" className="footer-logo">
+          <Link to="/" className="footer-logo">
             <span className="logo-accent">P</span>ortfolio
-          </a>
+          </Link>
           <p className="footer-quote">
             "Code is like poetry. It should be clean, elegant, and meaningful."
           </p>

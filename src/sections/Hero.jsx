@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import { FiGithub, FiInstagram, FiLinkedin, FiDownload } from "react-icons/fi";
 import { SiTiktok } from "react-icons/si";
 import { HiMail } from "react-icons/hi";
@@ -32,8 +33,10 @@ export default function Hero() {
         setText(text.slice(0, -1));
       }, 50);
     } else if (deleting && text.length === 0) {
-      setDeleting(false);
-      setRoleIndex((prev) => (prev + 1) % roles.length);
+      timeout = setTimeout(() => {
+        setDeleting(false);
+        setRoleIndex((prev) => (prev + 1) % roles.length);
+      }, 100);
     }
 
     return () => clearTimeout(timeout);
@@ -98,9 +101,9 @@ export default function Hero() {
             <button className="btn btn-primary" onClick={handleDownloadCV}>
               <FiDownload /> Download CV
             </button>
-            <a href="#contact" className="btn btn-outline">
+            <Link to="/contact" className="btn btn-outline">
               <HiMail /> Contact Me
-            </a>
+            </Link>
           </motion.div>
 
           <motion.div
