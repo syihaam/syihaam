@@ -27,7 +27,7 @@ export default function Navbar() {
     <nav className={`navbar ${scrolled ? "scrolled" : ""}`}>
       <div className="navbar-container container">
         <NavLink to="/" className="navbar-logo">
-          <span className="logo-accent">P</span>ortfolio
+          <span className="logo-accent">S</span>yihaam
         </NavLink>
 
         <div className={`navbar-menu ${isOpen ? "open" : ""}`}>

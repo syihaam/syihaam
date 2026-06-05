@@ -12,7 +12,6 @@ const welcomeMessages = [
   { threshold: 70, text: "환영합니다" },
   { threshold: 80, text: "Benvenuto" },
   { threshold: 90, text: "Bem-vindo" },
-  { threshold: 100, text: "Welcome To My Portfolio" },
 ];
 
 function getMessageForProgress(progress) {
@@ -23,9 +22,12 @@ function getMessageForProgress(progress) {
 
 export default function LoadingScreen({ onFinish }) {
   const [progress, setProgress] = useState(0);
-  const [fadeOut, setFadeOut] = useState(false);
+  const [contentFadeOut, setContentFadeOut] = useState(false);
   const [displayedMessage, setDisplayedMessage] = useState("Welcome");
   const [visible, setVisible] = useState(true);
+  const [showFinal, setShowFinal] = useState(false);
+  const [finalVisible, setFinalVisible] = useState(false);
+  const [fadeOut, setFadeOut] = useState(false);
   const targetMessage = useRef("Welcome");
 
   useEffect(() => {
@@ -64,38 +66,57 @@ export default function LoadingScreen({ onFinish }) {
 
   useEffect(() => {
     if (progress === 100) {
-      const t = setTimeout(() => {
-        setFadeOut(true);
-        setTimeout(() => {
-          if (onFinish) onFinish();
-        }, 800);
-      }, 1200);
-      return () => clearTimeout(t);
+      const t1 = setTimeout(() => {
+        setContentFadeOut(true);
+        const t2 = setTimeout(() => {
+          setShowFinal(true);
+          const t3 = setTimeout(() => {
+            setFinalVisible(true);
+          }, 100);
+          const t4 = setTimeout(() => {
+            setFadeOut(true);
+            setTimeout(() => {
+              if (onFinish) onFinish();
+            }, 800);
+          }, 3000);
+        }, 600);
+      }, 500);
+      return () => clearTimeout(t1);
     }
   }, [progress, onFinish]);
 
   return (
     <div className={`loading-screen ${fadeOut ? "fade-out" : ""}`}>
-      <div className="loading-content">
-        <div className="loading-logo">
-          <div className="loading-logo-ring" />
-          <span className="loading-logo-text">P</span>
-        </div>
-        <div className="loading-bar-container">
-          <div className="loading-bar">
-            <div className="loading-bar-fill" style={{ width: `${progress}%` }} />
+      {!showFinal ? (
+        <div className={`loading-content ${contentFadeOut ? "loading-content-hidden" : ""}`}>
+          <div className="loading-logo">
+            <div className="loading-logo-ring" />
+            <span className="loading-logo-text">P</span>
           </div>
-          <span className="loading-percent">{Math.floor(progress)}%</span>
+          <div className="loading-bar-container">
+            <div className="loading-bar">
+              <div className="loading-bar-fill" style={{ width: `${progress}%` }} />
+            </div>
+            <span className="loading-percent">{Math.floor(progress)}%</span>
+          </div>
+          <p className={`loading-message ${visible ? "visible" : "hidden"}`}>
+            {displayedMessage}
+          </p>
         </div>
-        <p className={`loading-message ${visible ? "visible" : "hidden"}`}>
-          {displayedMessage}
-        </p>
-      </div>
-      <div className="loading-particles">
-        {[...Array(6)].map((_, i) => (
-          <div key={i} className="loading-particle" style={{ animationDelay: `${i * 0.3}s` }} />
-        ))}
-      </div>
+      ) : (
+        <div className="loading-final">
+          <h1 className={`loading-final-text ${finalVisible ? "final-visible" : ""}`}>
+            Welcome To My Portfolio
+          </h1>
+        </div>
+      )}
+      {!showFinal && (
+        <div className="loading-particles">
+          {[...Array(10)].map((_, i) => (
+            <div key={i} className="loading-particle" style={{ animationDelay: `${i * 0.25}s` }} />
+          ))}
+        </div>
+      )}
     </div>
   );
 }

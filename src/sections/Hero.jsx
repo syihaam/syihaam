@@ -1,16 +1,16 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import { FiGithub, FiInstagram, FiLinkedin, FiDownload } from "react-icons/fi";
+import { FiGithub, FiInstagram } from "react-icons/fi";
 import { SiTiktok } from "react-icons/si";
 import { HiMail } from "react-icons/hi";
 import { motion } from "framer-motion";
 import "./Hero.css";
 
 const roles = [
-  "Full Stack Developer",
-  "UI/UX Designer",
-  "Content Creator",
-  "Tech Enthusiast",
+  "Student Developer",
+  "Web Enthusiast",
+  "Frontend Learner",
+  "Tech Explorer",
 ];
 
 export default function Hero() {
@@ -42,10 +42,6 @@ export default function Hero() {
     return () => clearTimeout(timeout);
   }, [text, deleting, roleIndex]);
 
-  const handleDownloadCV = () => {
-    alert("Download CV - Tambahkan link CV Anda di sini");
-  };
-
   return (
     <section id="home" className="hero">
       <div className="hero-bg-glow" />
@@ -68,7 +64,7 @@ export default function Hero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.1 }}
           >
-            Hi, I'm <span className="hero-name">Your Name</span>
+            Hi, I'm <span className="hero-name">Syihaam Mubarok</span>
           </motion.h1>
 
           <motion.div
@@ -87,9 +83,16 @@ export default function Hero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.3 }}
           >
-            I build modern, scalable, and high-performance web applications
-            with cutting-edge technologies. Passionate about creating
-            exceptional digital experiences.
+            I am a student at SMA IT HSI who is passionate about technology and continuous self-development. Over the past year, I have been learning web development, exploring modern technologies, and building projects to improve my skills. I enjoy turning ideas into digital experiences and strive to grow as a developer every day.
+          </motion.p>
+
+          <motion.p
+            className="hero-motto"
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.35 }}
+          >
+            Turning Curiosity Into Creation
           </motion.p>
 
           <motion.div
@@ -98,9 +101,9 @@ export default function Hero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.4 }}
           >
-            <button className="btn btn-primary" onClick={handleDownloadCV}>
-              <FiDownload /> Download CV
-            </button>
+            <Link to="/projects" className="btn btn-primary">
+              View Projects
+            </Link>
             <Link to="/contact" className="btn btn-outline">
               <HiMail /> Contact Me
             </Link>
@@ -112,17 +115,17 @@ export default function Hero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.5 }}
           >
-            <a href="https://github.com" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+            <a href="https://github.com/syihaam" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
               <FiGithub />
             </a>
-            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+            <a href="https://www.instagram.com/syi_mubrock/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
               <FiInstagram />
             </a>
-            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
-              <FiLinkedin />
-            </a>
-            <a href="https://tiktok.com" target="_blank" rel="noopener noreferrer" aria-label="TikTok">
+            <a href="https://www.tiktok.com/@syihaam0_0" target="_blank" rel="noopener noreferrer" aria-label="TikTok">
               <SiTiktok />
+            </a>
+            <a href="mailto:syihaam.1@gmail.com" aria-label="Email">
+              <HiMail />
             </a>
           </motion.div>
         </div>
@@ -144,7 +147,7 @@ export default function Hero() {
               <FiGithub />
             </div>
             <div className="floating-icon fi-2">
-              <FiLinkedin />
+              <HiMail />
             </div>
             <div className="floating-icon fi-3">
               <FiInstagram />

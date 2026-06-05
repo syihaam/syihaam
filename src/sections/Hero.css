@@ -99,6 +99,16 @@
   line-height: 1.7;
 }
 
+.hero-motto {
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--accent);
+  letter-spacing: 2px;
+  opacity: 0.85;
+  padding-left: 1rem;
+  border-left: 2px solid var(--accent);
+}
+
 .hero-buttons {
   display: flex;
   gap: 1rem;
@@ -231,6 +241,12 @@
 
   .hero-description {
     max-width: 100%;
+  }
+
+  .hero-motto {
+    padding-left: 0;
+    border-left: none;
+    text-align: center;
   }
 
   .hero-buttons {

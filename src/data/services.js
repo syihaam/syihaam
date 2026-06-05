@@ -22,7 +22,7 @@ export const servicesData = [
   {
     id: 4,
     icon: HiAcademicCap,
-    title: "Teaching & Mentoring",
-    description: "Mengajar dan mentoring programming, web development, dan desain untuk pemula hingga advance dengan metode yang mudah dipahami.",
+    title: "Teaching",
+    description: "Helping beginners learn English through simple lessons, practical conversations, and confidence-building practice.",
   },
 ];
