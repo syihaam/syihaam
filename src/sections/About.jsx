@@ -3,18 +3,16 @@ import { HiAcademicCap, HiCode, HiBriefcase, HiHeart } from "react-icons/hi";
 import "./About.css";
 
 const stats = [
-  { icon: HiCode, value: "50+", label: "Projects Completed" },
-  { icon: HiAcademicCap, value: "3+", label: "Years Experience" },
-  { icon: HiHeart, value: "30+", label: "Happy Clients" },
-  { icon: HiBriefcase, value: "10+", label: "Technologies" },
+  { icon: HiAcademicCap, value: "1+", label: "Years Learning" },
+  { icon: HiCode, value: "SMA IT HSI", label: "Student" },
+  { icon: HiHeart, value: "Web Dev", label: "Enthusiast" },
+  { icon: HiBriefcase, value: "Lifelong", label: "Learner" },
 ];
 
 const timeline = [
-  { year: "2021", title: "Started Learning", desc: "Memulai perjalanan belajar coding dari dasar HTML, CSS, dan JavaScript." },
-  { year: "2022", title: "First Project", desc: "Menyelesaikan project web pertama dan mulai freelance kecil-kecilan." },
-  { year: "2023", title: "Deep Dive", desc: "Mendalami React, Node.js, dan framework modern. Mulai aktif di komunitas." },
-  { year: "2024", title: "Professional", desc: "Bekerja sebagai full-stack developer dan mengerjakan project skala besar." },
-  { year: "2025", title: "Expert Level", desc: "Menguasai arsitektur sistem, cloud deployment, dan mentoring junior developer." },
+  { year: "2024", title: "Started Learning", desc: "Memulai perjalanan belajar coding dari dasar HTML, CSS, dan JavaScript." },
+  { year: "2025", title: "First Project", desc: "Membangun website sederhana menggunakan HTML, CSS, dan JavaScript untuk latihan." },
+  { year: "2026", title: "Deep Dive", desc: "Mendalami React dan framework modern, serta mulai belajar Node.js dan database." },
 ];
 
 export default function About() {
@@ -41,18 +39,18 @@ export default function About() {
             transition={{ duration: 0.6, delay: 0.1 }}
           >
             <div className="about-text">
-              <h3>A Passionate Developer & Creator</h3>
+              <h3>My Journey in Technology</h3>
               <p>
-                Halo! Saya seorang Full Stack Developer yang memiliki passion
-                dalam membangun aplikasi web modern dan inovatif. Dengan
-                pengalaman lebih dari 3 tahun di dunia pengembangan web, saya
-                selalu berusaha memberikan solusi terbaik melalui kode yang
-                bersih, efisien, dan scalable.
+                Hello! I'm Syihaam Mubarok, a student at SMA IT HSI with a strong interest in technology and web development.
               </p>
               <p>
-                Saya percaya bahwa teknologi adalah alat untuk menciptakan
-                dampak positif. Setiap project adalah kesempatan untuk belajar
-                hal baru dan mendorong batas kreativitas.
+                My journey started with curiosity about how websites are created. Over the past year, I have been learning modern web technologies, exploring programming concepts, and building projects to improve my skills.
+              </p>
+              <p>
+                I enjoy learning new things, solving problems, and turning ideas into digital experiences. Every project is an opportunity to grow, gain experience, and challenge myself to become better.
+              </p>
+              <p>
+                My goal is to continue learning, create meaningful projects, and contribute to the world of technology while inspiring others to keep growing.
               </p>
             </div>
 

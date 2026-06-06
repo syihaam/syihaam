@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
-import { FiGithub, FiInstagram, FiLinkedin } from "react-icons/fi";
+import { FiGithub, FiInstagram } from "react-icons/fi";
 import { SiTiktok } from "react-icons/si";
+import { FaWhatsapp } from "react-icons/fa";
 import "../styles/footer.css";
 
 export default function Footer() {
@@ -20,17 +21,17 @@ export default function Footer() {
         </div>
 
         <div className="footer-social">
-          <a href="https://github.com" target="_blank" rel="noopener noreferrer" className="footer-social-link" aria-label="GitHub">
+          <a href="https://github.com/syihaam" target="_blank" rel="noopener noreferrer" className="footer-social-link" aria-label="GitHub">
             <FiGithub />
           </a>
-          <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="footer-social-link" aria-label="Instagram">
+          <a href="https://www.instagram.com/syi_mubrock/" target="_blank" rel="noopener noreferrer" className="footer-social-link" aria-label="Instagram">
             <FiInstagram />
           </a>
-          <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="footer-social-link" aria-label="LinkedIn">
-            <FiLinkedin />
-          </a>
-          <a href="https://tiktok.com" target="_blank" rel="noopener noreferrer" className="footer-social-link" aria-label="TikTok">
+          <a href="https://www.tiktok.com/@syihaam0_0" target="_blank" rel="noopener noreferrer" className="footer-social-link" aria-label="TikTok">
             <SiTiktok />
+          </a>
+          <a href="https://wa.me/6285213215030" target="_blank" rel="noopener noreferrer" className="footer-social-link" aria-label="WhatsApp">
+            <FaWhatsapp />
           </a>
         </div>
 

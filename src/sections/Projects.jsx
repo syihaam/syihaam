@@ -52,7 +52,7 @@ export default function Projects() {
                     <FiExternalLink /> Live Demo
                   </a>
                   <a href={project.githubUrl} target="_blank" rel="noopener noreferrer" className="btn btn-outline btn-sm">
-                    <FiGithub /> GitHub
+                    <FiGithub /> GitHub Repository
                   </a>
                 </div>
               </div>

@@ -1,21 +1,38 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { FiGithub, FiInstagram, FiLinkedin, FiSend, FiMail, FiUser, FiMessageSquare } from "react-icons/fi";
+import { FiGithub, FiInstagram, FiSend, FiMail, FiUser, FiMessageSquare } from "react-icons/fi";
 import { SiTiktok } from "react-icons/si";
+import { FaWhatsapp } from "react-icons/fa";
 import "../sections/Contact.css";
 
 export default function Contact() {
   const [form, setForm] = useState({ name: "", email: "", message: "" });
-  const [sent, setSent] = useState(false);
+  const [error, setError] = useState("");
 
   const handleChange = (e) => {
     setForm({ ...form, [e.target.name]: e.target.value });
+    if (error) setError("");
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    setSent(true);
-    setTimeout(() => setSent(false), 3000);
+
+    const { name, email, message } = form;
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+    if (!name.trim() || !email.trim() || !message.trim()) {
+      setError("Please fill in all fields.");
+      return;
+    }
+
+    if (!emailRegex.test(email.trim())) {
+      setError("Please enter a valid email address.");
+      return;
+    }
+
+    const text = `Halo Syihaam, saya melihat portfolio Anda dan ingin menghubungi Anda.\n\nNama: ${name.trim()}\n\nEmail: ${email.trim()}\n\nPesan:\n${message.trim()}`;
+
+    window.open(`https://wa.me/6285213215030?text=${encodeURIComponent(text)}`, "_blank");
   };
 
   return (
@@ -45,17 +62,17 @@ export default function Contact() {
             </p>
 
             <div className="contact-social">
-              <a href="https://github.com" target="_blank" rel="noopener noreferrer" className="contact-social-link">
+              <a href="https://github.com/syihaam" target="_blank" rel="noopener noreferrer" className="contact-social-link">
                 <FiGithub /> GitHub
               </a>
-              <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="contact-social-link">
+              <a href="https://www.instagram.com/syi_mubrock/" target="_blank" rel="noopener noreferrer" className="contact-social-link">
                 <FiInstagram /> Instagram
               </a>
-              <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="contact-social-link">
-                <FiLinkedin /> LinkedIn
-              </a>
-              <a href="https://tiktok.com" target="_blank" rel="noopener noreferrer" className="contact-social-link">
+              <a href="https://www.tiktok.com/@syihaam0_0" target="_blank" rel="noopener noreferrer" className="contact-social-link">
                 <SiTiktok /> TikTok
+              </a>
+              <a href="https://wa.me/6285213215030" target="_blank" rel="noopener noreferrer" className="contact-social-link">
+                <FaWhatsapp /> WhatsApp
               </a>
             </div>
           </motion.div>
@@ -112,8 +129,9 @@ export default function Contact() {
               />
             </div>
 
+            {error && <p className="form-error">{error}</p>}
             <button type="submit" className="btn btn-primary btn-submit">
-              <FiSend /> {sent ? "Sent Successfully!" : "Send Message"}
+              <FiSend /> Send Message
             </button>
           </motion.form>
         </div>

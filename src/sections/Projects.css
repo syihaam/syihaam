@@ -109,6 +109,16 @@
   font-size: 0.8rem;
 }
 
+.project-card:nth-child(4) .project-image {
+  background: rgba(11, 18, 32, 0.8);
+}
+
+.project-card:nth-child(4) .project-image img {
+  object-fit: contain;
+  object-position: center;
+  padding: 0.75rem;
+}
+
 @media (max-width: 968px) {
   .projects-grid {
     grid-template-columns: repeat(2, 1fr);
