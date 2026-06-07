@@ -1,0 +1,82 @@
+# JURNAL PEMBUATAN WEBSITE PORTFOLIO PRIBADI
+
+## Identitas
+
+**Nama:** Syihaam Mubarok
+**Sekolah:** SMA IT HSI
+**Kelas:** XI (2)
+**Judul Project:** Website Portfolio Pribadi
+
+---
+
+## Latar Belakang
+
+Di era digital saat ini, portfolio menjadi salah satu media penting untuk menampilkan kemampuan, pengalaman, dan hasil karya seseorang. Oleh karena itu, saya membuat website portfolio pribadi sebagai sarana untuk memperkenalkan diri, menampilkan project yang telah saya kerjakan, serta mendokumentasikan perjalanan belajar saya dalam bidang teknologi dan tahfidz.
+
+---
+
+## Tujuan Pembuatan
+
+1. Melatih kemampuan dalam pengembangan website menggunakan React.
+2. Menampilkan hasil project yang telah dibuat.
+3. Membuat media personal branding yang profesional.
+4. Mendokumentasikan perjalanan belajar di bidang teknologi dan tahfidz.
+5. Menjadi tempat penyimpanan karya yang mudah diakses secara online.
+
+---
+
+## Teknologi yang Digunakan
+
+* React JS
+* HTML
+* CSS
+* Vite
+* Git
+* GitHub
+* Vercel
+* chatGPT
+
+---
+
+## Fitur Website
+
+### 1. Home
+
+Menampilkan informasi singkat mengenai diri saya, foto profil, motto hidup, dan perkenalan singkat.
+
+### 2. About
+
+Berisi informasi pribadi, latar belakang pendidikan, serta perjalanan belajar yang sedang saya jalani.
+
+### 3. Projects
+
+Menampilkan berbagai project yang telah saya buat, antara lain:
+
+* Student Profile Card
+* To Do List App
+* Weather Report Dashboard
+* Quran Memorization Tracker
+
+Selain project teknologi, terdapat juga kategori Tahfidz Projects yang berisi dokumentasi ujian hafalan Al-Qur'an.
+
+### 4. Contact
+
+Menyediakan berbagai cara untuk menghubungi saya melalui WhatsApp, GitHub, Instagram, TikTok, dan email.
+
+---
+
+## Hasil yang Dicapai
+
+Website portfolio berhasil dibuat dan dipublikasikan secara online menggunakan Vercel. Pengunjung dapat melihat informasi pribadi, hasil project, dokumentasi tahfidz, serta menghubungi saya melalui kontak yang tersedia.
+
+---
+
+## Kendala yang Dihadapi
+
+Selama proses pembuatan website, terdapat beberapa kendala seperti pengaturan tampilan gambar, pengelolaan halaman website, pengaturan navigasi, serta proses deployment ke Vercel. Kendala tersebut dapat diselesaikan melalui proses belajar, percobaan, dan perbaikan secara bertahap.
+
+---
+
+## Kesimpulan
+
+Pembuatan website portfolio pribadi memberikan pengalaman yang sangat bermanfaat dalam memahami pengembangan website modern menggunakan React. Melalui project ini, saya dapat mengembangkan kemampuan teknis, meningkatkan kreativitas, serta memiliki media profesional untuk menampilkan hasil karya dan perjalanan belajar saya.
