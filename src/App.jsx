@@ -8,13 +8,11 @@ import Footer from "./components/Footer";
 import WhatsAppButton from "./components/WhatsAppButton";
 import PageTransition from "./components/PageTransition";
 import ScrollToTop from "./components/ScrollToTop";
-import Home from "./pages/Home";
-import About from "./pages/About";
-import Projects from "./pages/Projects";
-import Certificates from "./pages/Certificates";
-import Contact from "./pages/Contact";
+import HomePage from "./pages/HomePage";
+import AboutPage from "./pages/AboutPage";
+import ProjectsPage from "./pages/ProjectsPage";
+import ContactPage from "./pages/ContactPage";
 import "./styles/global.css";
-import "./styles/pages.css";
 import "./App.css";
 
 function App() {
@@ -34,11 +32,10 @@ function App() {
             <AnimatePresence mode="wait">
               <PageTransition key={location.pathname}>
                 <Routes location={location}>
-                  <Route path="/" element={<Home />} />
-                  <Route path="/about" element={<About />} />
-                  <Route path="/projects" element={<Projects />} />
-                  <Route path="/certificates" element={<Certificates />} />
-                  <Route path="/contact" element={<Contact />} />
+                  <Route path="/" element={<HomePage />} />
+                  <Route path="/about" element={<AboutPage />} />
+                  <Route path="/projects" element={<ProjectsPage />} />
+                  <Route path="/contact" element={<ContactPage />} />
                 </Routes>
               </PageTransition>
             </AnimatePresence>

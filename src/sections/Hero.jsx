@@ -138,9 +138,7 @@ export default function Hero() {
         >
           <div className="hero-image-glow" />
           <div className="hero-image-container">
-            <div className="hero-image-placeholder">
-              <span>Your Photo</span>
-            </div>
+            <img src="/img/home.jpg" alt="Syihaam Mubarok" className="hero-image" />
           </div>
           <div className="hero-floating-icons">
             <div className="floating-icon fi-1">

@@ -26,7 +26,7 @@ export default function Navbar() {
   return (
     <nav className={`navbar ${scrolled ? "scrolled" : ""}`}>
       <div className="navbar-container container">
-        <NavLink to="/" className="navbar-logo">
+        <NavLink to="/" className="navbar-logo" onClick={() => setIsOpen(false)}>
           <span className="logo-accent">S</span>yihaam
         </NavLink>
 

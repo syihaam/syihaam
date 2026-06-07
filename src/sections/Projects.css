@@ -1,3 +1,32 @@
+.projects-category {
+  margin-bottom: 3.5rem;
+}
+
+.projects-category:last-child {
+  margin-bottom: 0;
+}
+
+.projects-category-title {
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 1.5rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid rgba(139, 92, 246, 0.15);
+  position: relative;
+}
+
+.projects-category-title::after {
+  content: "";
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  width: 50px;
+  height: 2px;
+  background: var(--accent);
+  border-radius: 2px;
+}
+
 .projects-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -47,6 +76,10 @@
 
 .project-card:hover .project-overlay {
   opacity: 1;
+}
+
+.project-overlay--single {
+  gap: 0;
 }
 
 .project-overlay-btn {
